@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Share:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+			
+			html, body {
+				height: 100%;
+			}
+			body {
+				background-color: #999;
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#688690+0,211c2d+100 */
+background: radial-gradient(ellipse at center,  #688690 0%,#211c2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+				
+			}
+			.calculator{
+				background: #353535;
+				font-family: "Share", sans-serif;
+				height: 400px;
+				
+				padding: 15px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				border-radius: 5px;
+				box-shadow: 0 6px 0 #a1a1a1, 0 8px 10px rgba(0, 0 ,0, 0.75);
+			}
+			.result {
+				font-family: "Share", sans-serif;
+				background-color: #cecfac;;
+				color: #3b3b32;
+				width: 90%;
+				margin: 8px 0 20px 10px;
+				text-align: right;
+				height: 50px;
+				line-height: 50px;
+				font-size: 35px;
+				padding: 10px;
+				overflow: hidden;
+				box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5), inset 0px 2px 0 #a1a1a1;
+			}
+			ul {
+				padding: 0;
+				margin: 0;
+			}
+			ul li {
+				font-family: "Share", sans-serif;
+				list-style: none;
+				background-color: #4e4e4e;
+				padding: 10px;
+				color: white;
+				width: 20%;
+				float: left;
+				margin: 5px;
+				cursor: pointer;
+				font-size: 20px;
+				border-radius: 5px;
+				box-shadow: 0 5px 0 #a5a5a5, 0 2px 5px rgba(0, 0, 0, 0.75);
+			}
+			ul li:active{
+				position:relative;
+				top: 5px;
+				box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+			}
+			ul li:nth-child(16) {
+				height: 75px;
+				line-height: 75px;
+			}
+			ul li:last-child {
+				margin-top: -48px;
+				width: 63%;
+			}
+			.signature {
+				font-size: 0.75rem;
+				text-align: right;
+				position: relative;
+				top: 4px;
+				right: 20px;
+				z-index: -1;
+			}

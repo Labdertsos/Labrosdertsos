@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title">
+            <h1>Tip calculator</h1>
+        <div class="col">
+            <label for="billAmount" class="">Amount (in euro)</label>
+            <div class="coll-bill">
+                <input type="number" placeholder="ie. 29.5" class="form-control" id="billAmount">
+            </div>
+        </div>
+        <div class="col">
+            <label for="tipAmount" class="">Tip ( as a %)</label>
+            <div class="coll-tip">
+                <input type="number" placeholder="ie. 15%" class="form-control" id="tipAmount">
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <button class="btn btn-primary" onclick="calculate()">
+            Calculate Tip and Total Bill
+        </button>
+    </div>
+
+    <div class="col">
+        <div class="totalTip">Tip</div>
+        <div class="totalAmount">Total bill</div>
+    </div>
+
+</div>
+
+    <script>
+        
+
+        function calculate() {
+        console.log("click")
+        var billAmount = document.getElementById("billAmount");
+        var tipAmount = document.getElementById("tipAmount");
+        tipAmount = Number(tipAmount.value);
+        billAmount = Number(billAmount.value);
+        tipAmount = tipAmount/100;
+
+        var totalTip = billAmount * tipAmount;
+        var totalAmount = billAmount + totalTip;
+        var tipHtml = "<h3>Total tip: <small>" + totalTip + "</small></h3>";
+        var billHtml = "<h3>Total bill: <small>" + totalAmount + "</small></h3>";
+        document.querySelector(".totalTip").innerHTML = tipHtml;
+        document.querySelector(".totalAmount").innerHTML = billHtml;
+
+        }
+
+        
+        
+
+    </script>
+
+
+</body>
+</html>

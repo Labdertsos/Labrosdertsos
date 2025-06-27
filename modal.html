@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modal.css">
+    <title>Custom Modal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styles for modal */
+        #modal-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        #modal-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            display: none; /* Hidden by default */
+        }
+
+        #modal-background.active, #modal-box.active {
+            display: block; /* Show when active */
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .button--close {
+            background-color: red;
+            color: white;
+        }
+
+        .button--accept {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Open Modal Button -->
+    <button type="button" id="openModal" class="button center js-open">
+        Subscribe
+    </button>
+
+    <!-- Modal and Background -->
+    <div id="modal-background"></div>
+    <div id="modal-box">
+        <h1>Custom Modal</h1>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Minima illo cum numquam sunt provident eius quam sed adipisci facilis. 
+            Pariatur culpa veritatis repellendus ab ullam!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Voluptatum error asperiores modi quae aliquid nobis!
+        </p>
+
+        <div class="text-right">
+            <button type="button" class="button button--close" id="closeModal">
+                Close
+            </button>
+            <button type="button" class="button button--accept">
+                Accept
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Modal and buttons
+        const modalBg = document.getElementById("modal-background");
+        const modalBox = document.getElementById("modal-box");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.getElementById("closeModal");
+
+        // Open modal
+        openBtn.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent default action (if any)
+            modalBg.classList.add("active");
+            modalBox.classList.add("active");
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modalBg.classList.remove("active");
+            modalBox.classList.remove("active");
+        });
+
+        // Close modal if clicking outside the modal box
+        modalBg.addEventListener('click', function(event) {
+            if (event.target === modalBg) {
+                modalBg.classList.remove("active");
+                modalBox.classList.remove("active");
+            }
+        });
+    </script>
+
+</body>
+</html>
